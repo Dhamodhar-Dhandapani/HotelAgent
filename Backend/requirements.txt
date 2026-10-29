@@ -1,0 +1,31 @@
+# Web framework
+fastapi
+fastapi[standard]
+uvicorn[standard]
+
+# Database
+psycopg2-binary
+sqlalchemy
+pydantic
+psycopg
+
+# LangChain ecosystem (modularized)
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+langchain-pinecone
+langchain-openai
+langchain-huggingface
+langchain-classic
+langgraph  # <-- Required for the new agent execution engine
+
+# ML / Embeddings
+sentence-transformers
+transformers
+accelerate
+
+# Utilities
+pypdf
+python-dotenv
+pinecone-client

@@ -1,0 +1,23 @@
+TEST QUESTIONS FOR HOTEL AGENT (BASED ON AVAILABLE TOOLS)
+
+1. Testing `ask_hotel_policy` (RAG Tool)
+- What are the standard check-in and check-out times?
+- Are pets allowed in the hotel, and is there a cleaning fee?
+- What is your cancellation policy for flexible rate bookings?
+- Is self-parking complimentary, or do I have to pay for it?
+
+2. Testing `get_booking_details` (Database Read Tool)
+- Can you check the status of my reservation? My booking ID is 1 and my phone number is 919876543210.
+- I want to see my check-in and check-out dates for booking ID 1 (Phone: 919876543210).
+
+3. Testing `execute_checkout` (Database Write Tool)
+- I am ready to check out now. My booking ID is 1 and my phone number is 919876543210.
+- Can you check me out? (Do not provide a phone number or booking ID first, to see if the agent asks for verification).
+
+4. Testing `create_service_request` (Database Ticket Tool)
+- Can you send up some extra pillows to my room? My booking ID is 1 and my phone number is 919876543210.
+- I need help fixing the air conditioning in my room. Booking ID is 1, phone is 919876543210.
+
+5. Testing `escalate_to_human` (Escalation Tool)
+- I am extremely angry about the noise level on my floor. I want a full refund immediately and I demand to speak with a human manager!
+- I want to change the legal name and email address on my booking profile (Booking ID: 1, Phone: 919876543210).
