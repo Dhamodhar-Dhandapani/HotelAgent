@@ -1,0 +1,407 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #020617;
+  --color-navy: #0a0e1a;
+  --color-navy-light: #111827;
+  --color-navy-mid: #0d1321;
+  --color-accent-blue: #00d4ff;
+  --color-accent-cyan: #22d3ee;
+  --color-luxury-gold: #d4a853;
+  --color-gold-light: #f0d48a;
+  --color-gold-warm: #c9973e;
+  --color-champagne: #f5e6c8;
+  --color-ivory: #faf8f0;
+  --color-glass: rgba(255, 255, 255, 0.04);
+  --color-glass-gold: rgba(212, 168, 83, 0.06);
+
+  --font-sans: 'Inter', 'Outfit', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Georgia', serif;
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-pulse-glow: pulseGlow 2.5s ease-in-out infinite;
+  --animate-waveform: waveform 1.2s ease-in-out infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-shimmer: shimmer 3s infinite;
+}
+
+/* ── Keyframes ────────────────────────────────────── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), 0 0 60px rgba(0, 212, 255, 0.08);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.5), 0 0 100px rgba(0, 212, 255, 0.2);
+  }
+}
+
+@keyframes waveform {
+
+  0%,
+  100% {
+    height: 4px;
+  }
+
+  50% {
+    height: 28px;
+  }
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(90px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(90px) rotate(-360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes holoRing {
+  0% {
+    transform: rotateX(75deg) rotateZ(0deg);
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotateX(75deg) rotateZ(360deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes neonPulse {
+
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+  }
+
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+  }
+}
+
+@keyframes glowBorder {
+
+  0%,
+  100% {
+    border-color: rgba(212, 168, 83, 0.2);
+  }
+
+  50% {
+    border-color: rgba(212, 168, 83, 0.5);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes digitalRain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.15;
+  }
+
+  90% {
+    opacity: 0.15;
+  }
+
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* ── Base Reset ────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #0a0e1a;
+  color: #e8e2d6;
+  font-family: 'Inter', 'Outfit', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Glassmorphism ────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 168, 83, 0.1);
+}
+
+.glass-dark {
+  background: rgba(10, 14, 26, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 168, 83, 0.08);
+}
+
+.glass-gold {
+  background: linear-gradient(135deg, rgba(212, 168, 83, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 168, 83, 0.15);
+}
+
+/* ── Luxury Cards ────────────────────────────────── */
+.luxury-card {
+  background: linear-gradient(145deg, rgba(17, 24, 39, 0.9) 0%, rgba(10, 14, 26, 0.95) 100%);
+  border: 1px solid rgba(212, 168, 83, 0.12);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luxury-card:hover {
+  border-color: rgba(212, 168, 83, 0.35);
+  box-shadow: 0 8px 32px rgba(212, 168, 83, 0.1), 0 0 0 1px rgba(212, 168, 83, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ── Glow Effects ────────────────────────────────── */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(212, 168, 83, 0.25), 0 0 60px rgba(212, 168, 83, 0.08);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1);
+}
+
+.robot-glow {
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.3), 0 0 80px rgba(212, 168, 83, 0.15), 0 0 120px rgba(0, 212, 255, 0.05);
+}
+
+.neon-border {
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.05), 0 0 20px rgba(0, 212, 255, 0.1);
+  animation: glowBorder 3s ease-in-out infinite;
+}
+
+/* ── Avatar Animations ────────────────────────────── */
+.avatar-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.avatar-breathe {
+  animation: breathe 5s ease-in-out infinite;
+}
+
+.ripple-ring {
+  animation: ripple 2s ease-out infinite;
+}
+
+.scan-line-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.scan-line-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 212, 255, 0.03) 50%);
+  background-size: 100% 4px;
+  animation: scanLine 4s linear infinite;
+  opacity: 0.5;
+}
+
+/* ── Text Gradients ────────────────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d4a853, #f0d48a, #c9973e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-cyan-gradient {
+  background: linear-gradient(135deg, #00d4ff, #22d3ee, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hologram-text {
+  background: linear-gradient(90deg, #00d4ff, #d4a853, #00d4ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Chat Bubbles ────────────────────────────────── */
+.chat-bubble-user {
+  background: linear-gradient(135deg, #1a5276, #0e6b8a);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 20px 20px 4px 20px;
+}
+
+.chat-bubble-ai {
+  background: linear-gradient(135deg, rgba(212, 168, 83, 0.08), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(212, 168, 83, 0.12);
+  border-radius: 20px 20px 20px 4px;
+}
+
+/* ── Shimmer Effect ────────────────────────────────── */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.06), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 168, 83, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 168, 83, 0.5);
+}
+
+/* ── Form Controls ────────────────────────────────── */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7) sepia(0.3) hue-rotate(10deg);
+}
+
+select option {
+  background: #111827;
+  color: #e8e2d6;
+}
+
+/* ── Reception Desk Bar ────────────────────────────── */
+.reception-desk {
+  background: linear-gradient(0deg, rgba(212, 168, 83, 0.08) 0%, transparent 100%);
+  border-top: 1px solid rgba(212, 168, 83, 0.15);
+}
+
+/* ── Digital Rain ────────────────────────────────── */
+.digital-rain-char {
+  position: absolute;
+  font-family: monospace;
+  font-size: 10px;
+  color: rgba(0, 212, 255, 0.12);
+  animation: digitalRain linear infinite;
+  user-select: none;
+  pointer-events: none;
+}

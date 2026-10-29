@@ -1,0 +1,60 @@
+/* ── App-specific overrides ────────────────────── */
+
+/* Hotel lobby ambient background */
+.hotel-lobby-bg {
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(212, 168, 83, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(10, 14, 26, 1) 0%, rgba(10, 14, 26, 1) 100%);
+}
+
+/* Ambient orbs */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.ambient-orb--gold {
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.12), transparent 70%);
+}
+
+.ambient-orb--cyan {
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.08), transparent 70%);
+}
+
+.ambient-orb--purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.06), transparent 70%);
+}
+
+/* Grid pattern overlay */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212, 168, 83, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 168, 83, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Vignette effect */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Bottom reception glow */
+.reception-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(0deg, rgba(212, 168, 83, 0.06) 0%, transparent 100%);
+  pointer-events: none;
+}
