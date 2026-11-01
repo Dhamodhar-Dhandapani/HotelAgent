@@ -11,25 +11,25 @@ python-dotenv
 pydantic
 email-validator
 
-# LangChain
+# LangChain / LangGraph
 langchain
 langchain-core
 langchain-community
 langchain-openai
+langchain-huggingface
 langgraph
 
-# Embeddings / RAG
+# Embeddings
 sentence-transformers
-langchain-huggingface
+
+# Pinecone Vector Store
+pinecone-client
+langchain-pinecone
 
 # PDF Processing
 pypdf
 
-# Vector Store (only if actually used)
-pinecone-client
-langchain-pinecone
-
-# HTTP
+# HTTP Client
 httpx
 
 # Testing
