@@ -1,11 +1,76 @@
-# Python virtual environment
-Backend/venv/
-
-
-# Environment variables
-Backend/.env
-
+# =========================
+# Python
+# =========================
 __pycache__/
 *.py[cod]
 *$py.class
+.pytest_cache/
 
+# Virtual Environments
+venv/
+Backend/venv/
+
+# Python Packaging
+*.egg-info/
+dist/
+build/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+Backend/.env
+Frontend/.env
+.env.local
+.env.development
+.env.production
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Coverage Reports
+# =========================
+htmlcov/
+.coverage
+
+# =========================
+# Node / React
+# =========================
+node_modules/
+Frontend/node_modules/
+
+# Vite Build Output
+dist/
+Frontend/dist/
+
+# =========================
+# Operating System Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.bak
+
+# =========================
+# Local Database Files
+# =========================
+*.db
+*.sqlite3
+
+# =========================
+# Render / Deployment
+# =========================
+.render/

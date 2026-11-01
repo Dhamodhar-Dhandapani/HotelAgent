@@ -1,31 +1,36 @@
-# Web framework
+# FastAPI
 fastapi
-fastapi[standard]
 uvicorn[standard]
 
 # Database
-psycopg2-binary
 sqlalchemy
-pydantic
-psycopg
+psycopg2-binary
+python-dotenv
 
-# LangChain ecosystem (modularized)
+# Validation
+pydantic
+email-validator
+
+# LangChain
 langchain
 langchain-core
 langchain-community
-langchain-text-splitters
-langchain-pinecone
 langchain-openai
-langchain-huggingface
-langchain-classic
-langgraph  # <-- Required for the new agent execution engine
+langgraph
 
-# ML / Embeddings
+# Embeddings / RAG
 sentence-transformers
-transformers
-accelerate
+langchain-huggingface
 
-# Utilities
+# PDF Processing
 pypdf
-python-dotenv
+
+# Vector Store (only if actually used)
 pinecone-client
+langchain-pinecone
+
+# HTTP
+httpx
+
+# Testing
+pytest
